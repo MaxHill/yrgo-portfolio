@@ -1,0 +1,28 @@
+<h2>Kontakt</h2>
+<p>
+  Gillar du det du ser? Hör gärna av dig så kan vi snacka om hur jag kan hjälpa
+  dig!
+</p>
+<form class="card" [formGroup]="contactForm" (ngSubmit)="send()">
+  <p *ngIf="status === 'success'">{{ message }}</p>
+  <label>
+    Namn:
+    <input type="text" formControlName="name" />
+  </label>
+  <label>
+    Email:
+    <input type="email" formControlName="email" />
+  </label>
+
+  <label>
+    Meddelande:
+    <textarea
+      name="message"
+      id=""
+      cols="30"
+      rows="10"
+      formControlName="message"
+    ></textarea>
+  </label>
+  <button type="submit">Skicka</button>
+</form>
